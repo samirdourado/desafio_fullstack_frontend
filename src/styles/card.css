@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ul {
+    @apply w-full min-w-[296px] max-w-[888px] h-auto bg-[#e3e3e3] flex justify-between items-start gap-2.5 flex-wrap;
+  }
+  @media (max-width: 499px) {
+    .ul {
+      @apply flex-col;
+    }
+  }
+  @media (min-width: 500px) {
+    .ul {
+      @apply flex-row;
+    }
+}
+
+.li-card {
+@apply w-full h-auto min-w-[276px] max-w-[276px] bg-gray2 flex justify-between items-start gap-2.5 text-white border rounded-lg border-solid border-[#e3e3e3];
+}
+.li-card.li-card:hover {
+@apply border border-solid border-colorA scale-[1.02];
+}

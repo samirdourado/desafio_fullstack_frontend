@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header-dashboard {
+    @apply w-full h-auto min-w-[320px] max-w-[888px] bg-[#e3e3e3] flex justify-between items-center;
+  }
+  @media (max-width: 499px) {
+    .header-dashboard {
+      @apply flex-col gap-2.5 mb-[30];
+    }
+  }
+  @media (min-width: 500px) {
+    .header-dashboard {
+      @apply flex-row mb-[50];
+    }
+  }

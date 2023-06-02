@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.li-buttons-wrapper {
+    @apply w-[27px] h-auto text-white bg-transparent flex flex-col gap-2.5;
+  }
+  
+.icon-buttons {
+    @apply w-[27px] h-auto text-white bg-transparent;
+  }
