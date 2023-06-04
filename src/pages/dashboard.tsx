@@ -3,16 +3,22 @@ import { useAuth } from '@/contexts/authContext'
 import { NextPage } from 'next'
 import { Inter } from 'next/font/google'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Image from 'next/image'
 import logo from "/public/logo.svg"
 import Link from 'next/link'
+import { CreateContactModal, EditContactModal }  from '@/components/modal'
+import { AuthContextContact } from '@/contexts/contactContext'
+import { AiFillCloseCircle } from 'react-icons/ai'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 const Dashboard: NextPage = ({}) => {
   const router = useRouter()
+  const [contact, setContact] = useState(null)
+  
+  const { createModal, setCreateModal, editModal, setEditModal }: any = useContext(AuthContextContact);
 
   useEffect(() => {
     const token = localStorage.getItem('agendaweb');
@@ -27,7 +33,9 @@ const Dashboard: NextPage = ({}) => {
   }
 
   const { user } = useAuth()
-  const contacts = user?.Contacts  
+  const { registerContact, editingContact } = useContext(AuthContextContact)  
+  
+  const contacts = user?.Contacts
 
   return (
     <main className={`reset container  ${inter.className}`}>
@@ -45,7 +53,6 @@ const Dashboard: NextPage = ({}) => {
             <p>Meus dados</p>
             <p>Email: {user.email}</p>
             <p>Telefone: {user.phone}</p>            
-            {/* <p>Entrou em: {user.registredAt}</p> */}
           </div>
           <div>
             <button>E</button>
@@ -54,7 +61,7 @@ const Dashboard: NextPage = ({}) => {
           <div>
             <nav>
               <h2>Contatos</h2>
-              <button>Add</button>
+              <button onClick={() => setCreateModal(true)} type={"button"}>Add</button>
             </nav>
 
             <ul className='ul'>
@@ -67,6 +74,7 @@ const Dashboard: NextPage = ({}) => {
                     phone={contact.phone}
                     type={contact.type}
                     registredAt={contact.registredAt}
+                    setEditModal={setEditModal}                    
                   />
                 ))
               ) : (
@@ -81,7 +89,36 @@ const Dashboard: NextPage = ({}) => {
       ) : (
         <p>Erro ao carregar</p>
       )}
-      
+
+      {
+        createModal ? 
+        <div className="backdrop-modal">
+            <div className='modal-wrapper'>
+                <div className='modal-header'>
+                    <h2>{"Cadastrar contato"}</h2>
+                    <button className='icon-buttons' onClick={() => setCreateModal(false)}>{<AiFillCloseCircle/>}</button>
+                </div>
+                <CreateContactModal/>
+            </div>
+        </div>
+         : 
+         <></>
+      }
+      {
+        editModal ?
+        <div className="backdrop-modal">
+            <div className='modal-wrapper'>
+                <div className='modal-header'>
+                    <h2>{"Editar contato"}</h2>
+                    <button className='icon-buttons' onClick={() => setEditModal(false)}>{<AiFillCloseCircle/>}</button>
+                </div>
+                <EditContactModal/>
+            </div>
+        </div>
+         : 
+         <></>
+      }
+
     </main>
   )
 }

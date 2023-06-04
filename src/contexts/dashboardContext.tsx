@@ -33,7 +33,6 @@ export interface iContacts {
 }
 
 
-
 export async function getStaticProps() {
     try {      
       const token = localStorage.getItem('agendaweb');

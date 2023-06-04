@@ -21,7 +21,7 @@
   }
 
   .header {
-    @apply w-full h-auto min-w-[320px] max-w-[1440px] bg-[#e3e3e3] flex justify-between items-center mb-9 pl-5 pr-5;
+    @apply w-full h-auto min-w-[320px] max-w-[1440px] bg-gray2 flex justify-between items-center mb-9 pl-5 pr-5;
   }
   @media (max-width: 499px) {
     .header {
@@ -67,7 +67,7 @@
   }
 
   .user-form-label {
-    @apply text-gray2
+    @apply text-gray2 w-full
   }
 
   .user-form-input {
@@ -80,20 +80,3 @@
 
 
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */

@@ -3,7 +3,7 @@
 body {
     height: 100%;
 }
-
+ 
 
 .container {
     width: 100%;
@@ -173,3 +173,42 @@ body {
     background-color: transparent;    
 }
 
+
+.modal-wrapper {
+    width: 100%;
+    height: auto;
+    min-width: 296px;
+    max-width: 396px;
+    background-color: #e3e3e3;
+    display: flex;    
+    justify-content: center;
+    align-items: flex-start;    
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 1px 20px 6px rgba(0,0,0,0.29);
+}
+
+
+.form-modal-area {
+    width: 100%;
+    height: auto;
+    min-width: 296px;
+    max-width: 396px;    
+    display: flex;    
+    justify-content: center;
+    align-items: flex-start;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+}
+
+.modal-fieldset {
+    width: 100%;
+    height: auto;
+    max-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
