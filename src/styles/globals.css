@@ -8,20 +8,75 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .reset {
+    @apply m-0 p-10 box-border no-underline mx-auto my-0;
+  }
+  body {
+    @apply bg-gradient-to-b from-colorA from-10% to-white to-80% h-screen
+  }
+
+  .container {
+    @apply w-full h-auto min-w-[320px] max-w-[1440px] bg-white flex flex-col justify-center items-center p-0;
+  }
+
+  .header {
+    @apply w-full h-auto min-w-[320px] max-w-[1440px] bg-gray2 flex justify-between items-center mb-9 pl-5 pr-5;
+  }
+  @media (max-width: 499px) {
+    .header {
+      @apply flex-col gap-2.5;
+    }
+  }
+  @media (min-width: 500px) {
+    .header {
+      @apply flex-row;
+    }
+  }
+  
+
+  .container-main {
+    @apply w-full h-auto min-w-[320px] max-w-[1440px] bg-[#ffffff] flex justify-center items-center;
+  }
+  @media (max-width: 499px) {
+    .container-main {
+      @apply flex-col gap-2.5;
+    }
+  }
+  @media (min-width: 500px) {
+    .container-main {
+      @apply flex-row;
+    }
+  }
+
+  .main-logo {
+    @apply w-6/12 h-auto bg-[#ffffff] flex flex-col justify-start items-start gap-2.5;
+  }
+  @media (max-width: 499px) {
+    .main-logo {
+      @apply hidden;
+    }
+  }
+
+  .form-area {
+    @apply w-6/12 h-auto min-w-[296px] max-w-[350px] bg-[#e3e3e3] flex flex-col justify-center items-center gap-2.5 rounded-lg mb-14;
+  }
+  
+  .user-form-container {
+    @apply bg-gray1 w-1/4 min-w-[296px] max-w-[296px] h-auto flex flex-col items-center justify-center gap-7 py-12 
+  }
+
+  .user-form-label {
+    @apply text-gray2 w-full
+  }
+
+  .user-form-input {
+    @apply mt-1 px-7 py-2 h-14 bg-gray2 shadow-sm placeholder-gray1 rounded-lg focus:outline-none
+  }
+  .user-form-button {
+    @apply mt-1 px-7 py-2 h-14 bg-colorB shadow-sm rounded-lg focus:outline-none
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+
+

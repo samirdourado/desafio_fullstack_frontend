@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.backdrop-modal {
+    @apply w-full h-full bg-[rgba(0,0,0,0.5)] backdrop-blur-[2px] fixed items-center justify-center flex left-0 top-0;
+}
+
+.modal-wrapper {
+    @apply w-full h-auto min-w-[296px] max-w-[396px] bg-gray2 flex flex-col justify-center items-start text-white shadow-[0px_1px_20px_6px_rgba(0,0,0,0.29)] rounded-lg border-[none];
+}
+
+.modal-header {
+    @apply flex justify-between items-center w-full h-10;
+}
+
+.form-modal-area {
+    @apply w-full h-auto min-w-[296px] max-w-[396px] flex flex-col justify-center items-start text-white rounded-lg border-[none] bg-gray1;
+}
+
+.modal-fieldset {
+    @apply w-full h-auto max-h-20 flex flex-col justify-start gap-2.5;
+}

@@ -1,0 +1,214 @@
+/* https://transform.tools/css-to-tailwind */
+
+body {
+    height: 100%;
+}
+ 
+
+.container {
+    width: 100%;
+    height: auto;
+    min-width: 320px;
+    max-width: 1440px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.header {
+    width: 100%;
+    height: auto;
+    min-width: 320px;
+    max-width: 1440px;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @media (max-width: 499px) {
+        flex-direction: column;
+        gap: 10px;
+        margim-bottom: 30px
+    }
+    
+    @media (min-width: 500px) {
+        flex-direction: row;
+        margim-bottom: 50px;
+    }
+}
+
+.header-dashboard {
+    width: 100%;
+    height: auto;
+    min-width: 320px;
+    max-width: 888px;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @media (max-width: 499px) {
+        flex-direction: column;
+        gap: 10px;
+        margim-bottom: 30px
+    }
+    
+    @media (min-width: 500px) {
+        flex-direction: row;
+        margim-bottom: 50px;
+    }
+}
+
+.container-main {
+    width: 100%;
+    height: auto;
+    min-width: 320px;
+    max-width: 1440px;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 499px) {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    @media (min-width: 500px) {
+        flex-direction: row;
+    }
+}
+
+
+.main-logo {
+    width: 50%;
+    height: auto;    
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+
+    @media (max-width: 499px) {
+        display: none;
+    }    
+}
+
+.form-area {
+    width: 50%;
+    height: auto;
+    min-width: 296px;
+    max-width: 296px;
+    background-color: #e3e3e3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;   
+     
+}
+
+
+
+.ul {
+    width: 100%;
+    min-width: 296px;
+    max-width: 888px;
+    height: auto;    
+    background-color: #e3e3e3;
+    display: flex;    
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    @media (max-width: 499px) {
+        flex-direction: column;        
+    }
+    
+    @media (min-width: 500px) {
+        flex-direction: row;
+    }
+}
+
+.li-card {
+    width: 100%;
+    height: auto;
+    min-width: 276px;
+    max-width: 276px;
+    background-color: #e3e3e3;
+    display: flex;    
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    color: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+
+    &&:hover {
+        border: 1px solid #94ca6d;
+        transform: scale(1.02);
+    }    
+}
+
+.li-buttons-wrapper {
+    width:27px;
+    height: auto;
+    color: #ffffff;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.icon-buttons {
+    width:27px;
+    height: auto;
+    color: #ffffff;
+    background-color: transparent;    
+}
+
+
+.modal-wrapper {
+    width: 100%;
+    height: auto;
+    min-width: 296px;
+    max-width: 396px;
+    background-color: #e3e3e3;
+    display: flex;    
+    justify-content: center;
+    align-items: flex-start;    
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 1px 20px 6px rgba(0,0,0,0.29);
+}
+
+
+.form-modal-area {
+    width: 100%;
+    height: auto;
+    min-width: 296px;
+    max-width: 396px;    
+    display: flex;    
+    justify-content: center;
+    align-items: flex-start;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+}
+
+.modal-fieldset {
+    width: 100%;
+    height: auto;
+    max-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
